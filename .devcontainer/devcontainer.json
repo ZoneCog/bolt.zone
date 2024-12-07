@@ -35,28 +35,7 @@
         "files.associations": {
           "*.pro": "prolog"
         }
-      },
-      "extensions": [
-        "streetsidesoftware.code-spell-checker",
-        "prolog.language",
-        "ms-python.python",
-        "julialang.language-julia",
-        "jax-lang-support"
-      ]
+      }
     }
-  },
-  "remoteUser": "node",
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-  ],
-  "env": {
-    "OPENAI_API_KEY": "<Your-OpenAI-O1-Pro-API-Key>",
-    "OPENCPI_API_KEY": "<Your-OpenCog-Hyperon-API-Key>",
-    "JULIAHUB_API_KEY": "<Your-JuliaHub-API-Key>",
-    "PENNYLANE_API_KEY": "<Your-PennyLane-API-Key>",
-    "SILLYTAVERN_CONFIG": "<Path-to-SillyTavern-Config>"
-  },
-  "initializeCommand": "opam install coq",
-  "onCreateCommand": "npx install openai jax flax pennylane julia ReservoirPy",
-  "postStartCommand": "./integrations/setup-integrations.sh"
+  }
 }
