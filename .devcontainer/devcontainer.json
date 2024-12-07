@@ -1,0 +1,62 @@
+{
+  "name": "Bolt.new AGI Integration DevContainer",
+  "dockerFile": "Dockerfile",
+  "context": ".",
+  "postCreateCommand": "npm install",
+  "forwardPorts": [3000, 5000, 8000],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange"
+  },
+  "extensions": [
+    "ms-python.python",
+    "julialang.language-julia",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "easonwong-de.mermaid-preview",
+    "coq-community.vscode-coq",
+    "prolog.language",
+    "jax-lang-support"
+  ],
+  "features": {
+    "node": {
+      "version": "18"
+    },
+    "python": {
+      "version": "3.11"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.pythonPath": "/usr/bin/python3",
+        "editor.formatOnSave": true,
+        "files.associations": {
+          "*.pro": "prolog"
+        }
+      },
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "prolog.language",
+        "ms-python.python",
+        "julialang.language-julia",
+        "jax-lang-support"
+      ]
+    }
+  },
+  "remoteUser": "node",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "env": {
+    "OPENAI_API_KEY": "<Your-OpenAI-O1-Pro-API-Key>",
+    "OPENCPI_API_KEY": "<Your-OpenCog-Hyperon-API-Key>",
+    "JULIAHUB_API_KEY": "<Your-JuliaHub-API-Key>",
+    "PENNYLANE_API_KEY": "<Your-PennyLane-API-Key>",
+    "SILLYTAVERN_CONFIG": "<Path-to-SillyTavern-Config>"
+  },
+  "initializeCommand": "opam install coq",
+  "onCreateCommand": "npx install openai jax flax pennylane julia ReservoirPy",
+  "postStartCommand": "./integrations/setup-integrations.sh"
+}
