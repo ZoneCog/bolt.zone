@@ -1,0 +1,15 @@
+% Define conditions and relationships
+precondition(goal(success), [step1, step2, step3]).
+
+% Define intermediary steps
+step1 :- assert(task_completed(task_a)).
+step2 :- assert(task_completed(task_b)).
+step3 :- task_completed(task_a), task_completed(task_b).
+
+% Automatically link tasks to AGI configurations
+link_integration(atomspace, open_cog_hyperon).
+link_integration(julia, juliahub).
+link_integration(sillytavern, storytelling).
+
+% Query execution paths
+execute_path(Goal) :- precondition(Goal, Steps), maplist(call, Steps).
