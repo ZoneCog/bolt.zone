@@ -1,6 +1,5 @@
 {
   "name": "Bolt.new AGI Integration DevContainer",
-  "dockerFile": "Dockerfile",
   "context": ".",
   "postCreateCommand": "npm install",
   "forwardPorts": [3000, 5000, 8000],
@@ -10,12 +9,7 @@
     "files.autoSave": "onFocusChange"
   },
   "extensions": [
-    "ms-python.python",
-    "julialang.language-julia",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
     "easonwong-de.mermaid-preview",
-    "coq-community.vscode-coq",
     "prolog.language",
     "jax-lang-support"
   ],
@@ -25,17 +19,12 @@
     },
     "python": {
       "version": "3.11"
-    }
-  },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "python.pythonPath": "/usr/bin/python3",
-        "editor.formatOnSave": true,
-        "files.associations": {
-          "*.pro": "prolog"
-        }
-      }
-    }
+    },
+    "ghcr.io/joedmck/devcontainer-features/cloudflared:1": {},
+    "ghcr.io/joedmck/devcontainer-features/wrangler:1": {},
+    "ghcr.io/devcontainers-extra/features/cloudflare-wrangler:1": {},
+    "ghcr.io/devcontainers-extra/features/cloudflared:1": {},
+    "ghcr.io/devcontainers-extra/features/cloudflared-fips:1": {},
+    "ghcr.io/sebst/devcontainer-features/cf-warp-cli:1": {}
   }
 }
