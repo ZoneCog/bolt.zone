@@ -2,23 +2,9 @@
   "name": "Bolt.new AGI Integration DevContainer",
   "context": ".",
   "postCreateCommand": "npm install",
-  "forwardPorts": [3000, 5000, 8000],
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "editor.formatOnSave": true,
-    "files.autoSave": "onFocusChange"
-  },
-  "extensions": [
-    "easonwong-de.mermaid-preview",
-    "prolog.language",
-    "jax-lang-support"
-  ],
   "features": {
     "node": {
       "version": "18"
-    },
-    "python": {
-      "version": "3.11"
     },
     "ghcr.io/joedmck/devcontainer-features/cloudflared:1": {},
     "ghcr.io/joedmck/devcontainer-features/wrangler:1": {},
